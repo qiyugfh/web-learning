@@ -1,0 +1,22 @@
+html,
+body {
+    margin: 0;
+    padding: 20px;
+
+    .box {
+        width: 200px;
+        height: 200px;
+        background: url('../images/componentBg.png');
+    }
+
+    .box2 {
+        width: 200px;
+        height: 200px;
+        background: url('../images/BasicsBg.png');
+    }
+
+    li {
+        font-size: 12px;
+        line-height: 30px;
+    }
+}
