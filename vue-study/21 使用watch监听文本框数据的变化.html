@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue.js"></script>
+    <script src="./lib/vue-router.js"></script>
+
+</head>
+
+<body>
+
+    <div id="app">
+
+        <input type="text" v-model="firstName" />+
+        <input type="text" v-model="secondName">=
+        <input type="text" v-model="fullName">
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                firstName: '',
+                secondName: '',
+                fullName: '',
+            },
+            methods: {
+
+            },
+
+            watch: {
+                firstName: function (newVal, oldVal) {
+                    console.log('new: ' + newVal + ' --- old: ' + oldVal)
+                    // this.fullName = this.firstName + '-' + this.secondName
+                    // 或者使用下面的方式
+                    this.fullName = newVal + '-' + this.secondName
+                },
+                secondName: function (newVal) {
+                    this.fullName = this.firstName + '-' + newVal
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
